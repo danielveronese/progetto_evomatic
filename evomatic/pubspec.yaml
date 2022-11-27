@@ -80,7 +80,14 @@ flutter:
         fonts:
          - asset: build\flutter_assets\fonts\Montserrat-Regular.ttf
            weight: 700
-         
+      - family: Merriweather
+        fonts:
+         - asset: build\flutter_assets\fonts\Merriweather-Light.ttf
+           weight: 300
+      - family: Poppins
+        fonts:
+         - asset: build\flutter_assets\fonts\Poppins-Regular.ttf
+           weight: 600   
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

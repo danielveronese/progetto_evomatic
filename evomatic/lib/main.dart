@@ -1,27 +1,31 @@
 import 'dart:math';
-
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Carrello());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent, // transparent status bar
+  ));
+  runApp(const Catalogo());
 }
 
 String buttonname = 'click';
 int currentIndex = 0;
 
-class Carrello extends StatefulWidget {
-  Carrello({Key? key}) : super(key: key);
+class Catalogo extends StatefulWidget {
+  const Catalogo({Key? key}) : super(key: key);
 
   @override
-  State<Carrello> createState() => _CarrelloState();
+  State<Catalogo> createState() => _CatalogoState();
 }
 
-class _CarrelloState extends State<Carrello> {
+class _CatalogoState extends State<Catalogo> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const Pageex(),
+      home: Pageex(),
     );
   }
 }
@@ -38,53 +42,30 @@ class _Pageexstate extends State<Pageex> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white10,
+        backgroundColor: const Color.fromARGB(255, 247, 128, 0),
         elevation: 0,
-        actions: <Widget>[
-          FloatingActionButton(
-            onPressed: (() {}),
-            backgroundColor: const Color.fromRGBO(247, 127, 0, 100),
-            foregroundColor: const Color.fromRGBO(0, 48, 73, 100),
-            child: const Icon(Icons.person),
-            elevation: 0,
-          ),
-        ],
-      ),
-      body: Center(
-          child: SizedBox(
-        width: double.infinity,
-        height: double.infinity,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('Catalogo',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontFamily: 'Montserrat',
-                    fontSize: 35.0)),
-          ],
+        centerTitle: true,
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.menu,
+                color: Color.fromRGBO(0, 48, 73, 1),
+              ),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            );
+          },
         ),
-      )),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-              label: 'home',
-              icon: Icon(
-                Icons.home,
-              )),
-          BottomNavigationBarItem(
-              label: 'settings',
-              icon: Icon(
-                Icons.settings,
-              ))
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.person),
+            color: const Color.fromRGBO(0, 48, 73, 1),
+          )
         ],
-        currentIndex: currentIndex,
-        onTap: (int index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
       ),
     );
   }

@@ -1,0 +1,42 @@
+FloatingActionButton(
+            onPressed: (() {}),
+            backgroundColor: const Color.fromRGBO(247, 127, 0, 100),
+            foregroundColor: const Color.fromRGBO(0, 48, 73, 100),
+            child: const Icon(Icons.person),
+            elevation: 0,
+          ),
+          FloatingActionButton(
+            
+            onPressed: (() {}),
+            backgroundColor: const Color.fromRGBO(247, 127, 0, 100),
+            foregroundColor: const Color.fromRGBO(0, 48, 73, 100),
+            child: const Icon(Icons.menu),
+            elevation: 0,
+          ),
+
+
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: const Color.fromRGBO(247, 127, 0, 100),
+        foregroundColor: const Color.fromRGBO(0, 48, 73, 100),
+        child: const Icon(Icons.person),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: const Color.fromRGBO(247, 127, 0, 100),
+        foregroundColor: const Color.fromRGBO(0, 48, 73, 100),
+        child: const Icon(Icons.person),
+      ),
+
+
+
+
+
+const Text('Catalogo',
+            style: TextStyle(
+              color: Color.fromRGBO(0, 48, 73, 1),
+              fontFamily: 'Montserrat',
+              fontSize: 35.0,
+            )),
